@@ -34,21 +34,30 @@ class InputBox extends Component {
 
 			let dbCon = this.props.db.database().ref();
 
+			console.log('this is last two');
 			console.log(this.props.lastTwo);
+
+			//determine if this latest input creates a haiku
 			if(syllable(trim(this.state.message)) === 5 
 				&& this.props.lastTwo[0].syllables === 5 
 				&& this.props.lastTwo[1].syllables === 7) {
 				
+
+				console.log('haiku created!');
 				haiku = true;
-				
+
+
+				//if a haiku is created, we add it to the database as a new object
 				dbCon.child('haikus').push({
-					haiku: [this.props.lastTwo[0].message, this.props.lastTwo[1].message, this.state.message]
+					haiku: [this.props.lastTwo[0].message, this.props.lastTwo[1].message, this.state.message],
+					createdOn: new Date(Date.now()).toLocaleString()
 				});
 
 				//update lastTwo in the db
 				dbCon.child('/messages/' + this.props.lastTwo[0].key).update({isHaiku: true});
 				dbCon.child('/messages/' + this.props.lastTwo[1].key).update({isHaiku: true});
 
+				//TODO/BUG: on creation of a haiku, only the latest Message gets the isHaiku class. On refresh lastTwo have it as well, but need to make them rerender on haiku creation
 				
 			}
 

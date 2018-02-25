@@ -1,23 +1,63 @@
 import React, { Component } from 'react';
 
+import Haiku from './Haiku';
+
+import _ from 'lodash';
 
 class Haikus extends Component {
 
 	constructor(props) {
 		super(props);
 
+		this.state = {
+			'haikus': []
+		};
+
 		let app = this.props.db.database().ref('haikus');
 
-		/*app.on('value', snapshot => {
+		//TODO: order on createdOn
+		app.on('value', snapshot => {
 			this.getData(snapshot.val());
-		});*/
+		});
+	}
+
+	getData(values) {
+
+		let haikusVal = values;
+		
+		//maps the response from firebase to an array and assigns keys for use in the component
+		let haikus = _(haikusVal).keys().map(key => {
+			let cloned = _.clone(haikusVal[key]);
+			cloned.key = key;
+			return cloned;
+		}).value();
+
+		console.log('from haikus');
+		console.log(haikus);
+
+		this.setState({
+			haikus: haikus
+		});
+
 	}
 
 	render(){
-		return(
-			<div>All the current haikus</div>
-			
 
+		
+
+		let haikusNodes = this.state.haikus.map(haiku => {
+			return (
+				<Haiku key={haiku.key} body={haiku.haiku} date={haiku.createdOn} />
+				)
+		})
+
+		return(
+			<div>
+			<div>All the current haikus</div>
+
+			{haikusNodes}		
+			
+			</div>
 
 		)
 	}

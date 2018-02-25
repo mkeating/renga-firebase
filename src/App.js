@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Route, BrowserRouter } from 'react-router-dom';
 
-import logo from './logo.svg';
 import './App.css';
 
 import firebase from 'firebase';

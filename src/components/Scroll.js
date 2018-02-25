@@ -31,7 +31,6 @@ class Scroll extends Component {
 	getData(values) {
 		let messagesVal = values;
 		
-
 		//maps the response from firebase to an array and assigns keys for use in the component
 		let messages = _(messagesVal).keys().map(key => {
 			let cloned = _.clone(messagesVal[key]);
@@ -45,18 +44,20 @@ class Scroll extends Component {
 
 	}
 
-	haikuCreated () {
-		console.log('haiku created!');
-	}
-
-	render(){
+	render() {
 
 		let lastTwo = this.state.messages.slice(-2);
 
+		//console.log('from scroll.js');
+		//console.log(lastTwo);
+
 		let messageNodes = this.state.messages.map(message => {
+
+			//console.log(message.key);
+
 			return (
 				
-					<Message message = {message.message} key={message.key} isHaiku={message.isHaiku}/>
+					<Message message={message.message} key={message.key} isHaiku={message.isHaiku}/>
 			);
 		});
 
@@ -68,9 +69,9 @@ class Scroll extends Component {
 			          transitionEnterTimeout={500}
 			          transitionLeaveTimeout={500}>
 			          {messageNodes}
-			        </CSSTransitionGroup>
-			     </div>
-				<InputBox db={this.props.db} lastTwo={lastTwo} haikuCreated={this.haikuCreated()}/>
+			    </CSSTransitionGroup>
+			    </div>
+				<InputBox db={this.props.db} lastTwo={lastTwo}/>
 				</div>
 		);
 	}

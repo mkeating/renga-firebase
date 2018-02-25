@@ -3,3 +3,23 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.isHaiku {
+	color: green;
+}
+
+.haikuBox {
+	border: 1px solid black;
+	margin: 10px;
+}
+
+.haikuBody {
+	border: 1px solid black;
+	margin: 2px;
+}
+
+.haikuDate {
+	border: 1px solid black;
+	margin: 2px;
+	color: #333;
+}
