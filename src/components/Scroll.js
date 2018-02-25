@@ -57,8 +57,8 @@ class Scroll extends Component {
 		});
 
 		return (
-				<div>
-				<div className="message-wrapper">
+				<div className="scrollContainer">
+				<div className="messageContainer">
 				<CSSTransitionGroup
 			          transitionName="message"
 			          transitionEnterTimeout={500}

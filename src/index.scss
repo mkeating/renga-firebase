@@ -4,8 +4,21 @@ body {
   font-family: sans-serif;
 }
 
+$primary-color: green;
+
+
+.scrollContainer {
+	width: 400px;
+	margin: 0 auto;
+}
+
+.messageContainer {
+	border: 1px solid blue;
+}
+
+
 .isHaiku {
-	color: green;
+	color: $primary-color;
 	transition: color 4s;
 }
 
