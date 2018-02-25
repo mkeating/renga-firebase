@@ -56,13 +56,10 @@ class InputBox extends Component {
 				//update lastTwo in the db
 				dbCon.child('/messages/' + this.props.lastTwo[0].key).update({isHaiku: true});
 				dbCon.child('/messages/' + this.props.lastTwo[1].key).update({isHaiku: true});
-
-				//TODO/BUG: on creation of a haiku, only the latest Message gets the isHaiku class. On refresh lastTwo have it as well, but need to make them rerender on haiku creation
 				
 			}
 
 			//target firebase collection and push
-
 			dbCon.child('/messages').push({
 				message: trim(this.state.message),
 				syllables: syllable(trim(this.state.message)),

@@ -48,12 +48,7 @@ class Scroll extends Component {
 
 		let lastTwo = this.state.messages.slice(-2);
 
-		//console.log('from scroll.js');
-		//console.log(lastTwo);
-
 		let messageNodes = this.state.messages.map(message => {
-
-			//console.log(message.key);
 
 			return (
 				

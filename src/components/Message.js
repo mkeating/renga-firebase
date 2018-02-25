@@ -16,9 +16,9 @@ class Message extends Component {
 			this.setState({haikuClass: 'isHaiku'});
 		}*/
 
-		if(this.props.isHaiku){
+		/*if(this.props.isHaiku){
 			this.haikuClass = "isHaiku";
-		}
+		}*/
 	}
 
 	componentWillUpdate() {
