@@ -19,7 +19,7 @@ class Haiku extends Component {
 					{haiku}
 				</div>
 				<div className="haikuDate">
-					{this.props.date}
+					Created on {this.props.date}
 				</div>
 			</div>
 		);

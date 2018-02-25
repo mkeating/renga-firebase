@@ -16,7 +16,7 @@ class Haikus extends Component {
 		let app = this.props.db.database().ref('haikus');
 
 		//TODO: order on createdOn
-		app.on('value', snapshot => {
+		app.orderByChild('createdOn').on('value', snapshot => {
 			this.getData(snapshot.val());
 		});
 	}
@@ -47,7 +47,11 @@ class Haikus extends Component {
 
 		let haikusNodes = this.state.haikus.map(haiku => {
 			return (
-				<Haiku key={haiku.key} body={haiku.haiku} date={haiku.createdOn} />
+				<div class="col">
+					<Haiku key={haiku.key} body={haiku.haiku} date={haiku.createdOn} />
+				
+				</div>
+
 				)
 		})
 
@@ -55,7 +59,12 @@ class Haikus extends Component {
 			<div>
 			<div>All the current haikus</div>
 
-			{haikusNodes}		
+			<div class="flex-grid">
+				
+				{haikusNodes}	
+
+			</div>
+			
 			
 			</div>
 

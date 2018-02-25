@@ -76,7 +76,7 @@ class InputBox extends Component {
 	render(){
 		return (
 			<form onSubmit={this.onSubmit}>
-				<input type="text" maxlength="200" placeholder = "type a message"
+				<input type="text" maxLength="200" placeholder = "type a message"
 					onChange = {this.onChange}
 					value = {this.state.message} />
 				

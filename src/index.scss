@@ -4,8 +4,16 @@ body {
   font-family: sans-serif;
 }
 
+
+$base-color: black;
 $primary-color: green;
 
+
+@keyframes haikuFlash {
+	0% { color: $base-color; }
+	30% {color: $primary-color;}
+	100% {color: $base-color;}
+}
 
 .scrollContainer {
 	width: 400px;
@@ -17,9 +25,30 @@ $primary-color: green;
 }
 
 
+.flex-grid {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.col {
+	flex: 1;
+}
+
+.flex-grid .col {
+	flex-basis: 32%;
+	max-width: 400px;
+}
+
+@media(max-width: 500px) {
+	.flex-grid .col {
+		flex-basis: 100%;
+		max-width: none;
+	}
+}
+
 .isHaiku {
-	color: $primary-color;
-	transition: color 4s;
+	animation: haikuFlash 3s;
 }
 
 .haikuBox {
@@ -30,6 +59,7 @@ $primary-color: green;
 .haikuBody {
 	border: 1px solid black;
 	margin: 2px;
+	padding: 10px;
 }
 
 .haikuDate {
