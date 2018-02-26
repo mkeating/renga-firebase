@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <div> 
         <div className="appTitleContainer">
-          <h1 className="appTitle">Renga</h1>
+          <a href="/"><h1 className="appTitle">Renga</h1></a>
         </div>
         <BrowserRouter>
           <div>

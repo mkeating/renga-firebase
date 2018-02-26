@@ -5,9 +5,9 @@ $primary-color: #00FA9A;
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Tangerine', cursive;
+  font-family: 'Kaushan Script', cursive;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400;
   color: $base-color;
   background: #fdfcfb; /* Old browsers */
 background: -moz-linear-gradient(-45deg, #fdfcfb 0%, #e2d1c3 100%); /* FF3.6-15 */
@@ -37,8 +37,9 @@ min-height: 100vh;
 }
 
 .scrollContainer {
-	width: 300px;
+	width: 365px;
 	margin: 0 auto;
+	padding:15px;
 
 	
 }
@@ -46,10 +47,14 @@ min-height: 100vh;
 .messageContainer {
 	background: white;
 	padding: 10px;
-	font-size: 2em;
-	max-height: 400px; /* reasonable estimate */
+	font-size: 1.3em;
+	max-height: 300px; /* reasonable estimate */
     overflow-y: auto; /* show scrollbar only when text overflows vertically */
     position: relative;
+}
+
+.messageContainerBuffer {
+	height: 300px;
 }
 
 input {
@@ -96,13 +101,13 @@ input {
 }
 
 .haikuBody {
-	border: 1px solid black;
+	
 	margin: 2px;
 	padding: 10px;
 }
 
 .haikuDate {
-	border: 1px solid black;
+	
 	margin: 2px;
 	color: #C0C0C0;
 }

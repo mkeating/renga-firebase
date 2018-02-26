@@ -62,13 +62,16 @@ class Scroll extends Component {
 
 		return (
 				<div className="scrollContainer">
-				<Panel className="messageContainer">
+				<p>"Renga (連歌, collaborative poetry) is a genre of Japanese collaborative poetry — poetry written by more than one author working together." You and everyone else can work together on the same scroll in real-time. If a haiku is created, it will be added to <a href="/haikus">the archive.</a></p>
+				<Panel className="messageContainerBuffer">
+				<div className="messageContainer">
 				<CSSTransitionGroup
 			          transitionName="message"
 			          transitionEnterTimeout={500}
 			          transitionLeaveTimeout={500}>
 			          {messageNodes}
 			    </CSSTransitionGroup>
+			    </div>
 			    </Panel>
 				<InputBox db={this.props.db} lastTwo={lastTwo}/>
 

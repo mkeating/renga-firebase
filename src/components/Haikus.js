@@ -57,13 +57,14 @@ class Haikus extends Component {
 
 		return(
 			<div>
-			<div>All the current haikus</div>
 
-			<div className="flex-grid">
-				
-				{haikusNodes}	
+				<div className="appTitleContainer"><h2>All the created haikus</h2></div>
 
-			</div>
+				<div className="flex-grid">
+					
+					{haikusNodes}	
+
+				</div>
 			
 			
 			</div>
