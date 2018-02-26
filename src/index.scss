@@ -1,27 +1,66 @@
+
+$base-color: #333;
+$primary-color: #00FA9A;
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Tangerine', cursive;
+  font-size: 18px;
+  font-weight: 500;
+  color: $base-color;
+  background: #fdfcfb; /* Old browsers */
+background: -moz-linear-gradient(-45deg, #fdfcfb 0%, #e2d1c3 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg, #fdfcfb 0%,#e2d1c3 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg, #fdfcfb 0%,#e2d1c3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfcfb', endColorstr='#e2d1c3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+min-height: 100vh;
 }
-
-
-$base-color: black;
-$primary-color: green;
-
 
 @keyframes haikuFlash {
 	0% { color: $base-color; }
-	30% {color: $primary-color;}
+	10% {color: $primary-color;}
 	100% {color: $base-color;}
 }
 
+.appTitle{
+	font-size: 4em;
+	color: #8b0000;
+	margin: 10px;
+}
+
+.appTitleContainer {
+	
+	padding: 10px;
+	width: 100%;
+	text-align: center;
+}
+
 .scrollContainer {
-	width: 400px;
+	width: 300px;
 	margin: 0 auto;
+
+	
 }
 
 .messageContainer {
-	border: 1px solid blue;
+	background: white;
+	padding: 10px;
+	font-size: 2em;
+	max-height: 400px; /* reasonable estimate */
+    overflow-y: auto; /* show scrollbar only when text overflows vertically */
+    position: relative;
+}
+
+input {
+	width: 100%;
+	font-size: 2em;
+}
+.submitButton {
+	width: 100%;
+	font-size: 2em;
+	padding:10px;
+	height: 46px;
 }
 
 
@@ -48,11 +87,11 @@ $primary-color: green;
 }
 
 .isHaiku {
-	animation: haikuFlash 3s;
+	animation: haikuFlash 7s;
 }
 
 .haikuBox {
-	border: 1px solid black;
+	
 	margin: 10px;
 }
 
@@ -65,5 +104,5 @@ $primary-color: green;
 .haikuDate {
 	border: 1px solid black;
 	margin: 2px;
-	color: #333;
+	color: #C0C0C0;
 }

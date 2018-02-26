@@ -11,6 +11,10 @@ import { CSSTransitionGroup } from 'react-transition-group';
 
 import '../css/Scroll.css';
 
+import Panel from 'muicss/lib/react/panel';
+
+
+
 
 
 class Scroll extends Component {
@@ -58,15 +62,17 @@ class Scroll extends Component {
 
 		return (
 				<div className="scrollContainer">
-				<div className="messageContainer">
+				<Panel className="messageContainer">
 				<CSSTransitionGroup
 			          transitionName="message"
 			          transitionEnterTimeout={500}
 			          transitionLeaveTimeout={500}>
 			          {messageNodes}
 			    </CSSTransitionGroup>
-			    </div>
+			    </Panel>
 				<InputBox db={this.props.db} lastTwo={lastTwo}/>
+
+			
 				</div>
 		);
 	}

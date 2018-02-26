@@ -47,7 +47,7 @@ class Haikus extends Component {
 
 		let haikusNodes = this.state.haikus.map(haiku => {
 			return (
-				<div class="col">
+				<div className="col">
 					<Haiku key={haiku.key} body={haiku.haiku} date={haiku.createdOn} />
 				
 				</div>
@@ -59,7 +59,7 @@ class Haikus extends Component {
 			<div>
 			<div>All the current haikus</div>
 
-			<div class="flex-grid">
+			<div className="flex-grid">
 				
 				{haikusNodes}	
 

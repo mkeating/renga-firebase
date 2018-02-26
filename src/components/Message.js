@@ -38,9 +38,8 @@ class Message extends Component {
 
 		
 		return (
-			<div className={this.haikuClass}>
-				{this.props.message}
-				
+			<div className={this.haikuClass} >
+				{this.props.message}	
 			</div>
 		);
 	}

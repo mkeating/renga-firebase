@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import Panel from 'muicss/lib/react/panel';
+
 class Haiku extends Component {
 
 	constructor(props){
@@ -14,14 +16,16 @@ class Haiku extends Component {
 		});
 		
 		return (
-			<div className="haikuBox">
+			
+			<Panel className="haikuBox">
 				<div className="haikuBody">
 					{haiku}
 				</div>
 				<div className="haikuDate">
 					Created on {this.props.date}
 				</div>
-			</div>
+			</Panel>
+			
 		);
 	}
 }

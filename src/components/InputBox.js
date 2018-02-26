@@ -4,6 +4,9 @@ import trim from 'trim';
 
 import syllable from 'syllable';
 
+import Input from 'muicss/lib/react/input';
+
+import Button from 'muicss/lib/react/button';
 
 class InputBox extends Component {
 
@@ -76,11 +79,12 @@ class InputBox extends Component {
 	render(){
 		return (
 			<form onSubmit={this.onSubmit}>
-				<input type="text" maxLength="200" placeholder = "type a message"
+
+				<Input type="text" maxLength="200" placeholder = "type a message"
 					onChange = {this.onChange}
 					value = {this.state.message} />
+				<Button variant="raised" type="submit" className="submitButton">Submit</Button>
 				
-				<input type="submit" value="submit" />
 			</form>
 		);
 	}
