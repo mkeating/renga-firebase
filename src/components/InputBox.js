@@ -80,7 +80,7 @@ class InputBox extends Component {
 		return (
 			<form onSubmit={this.onSubmit}>
 
-				<Input type="text" maxLength="200" placeholder = "type a message"
+				<Input type="text" maxLength="50" placeholder = "type a message"
 					onChange = {this.onChange}
 					value = {this.state.message} />
 				<Button variant="raised" type="submit" className="submitButton">Submit</Button>
