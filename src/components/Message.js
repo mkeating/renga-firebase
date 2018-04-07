@@ -38,7 +38,7 @@ class Message extends Component {
 
 		
 		return (
-			<div className={this.haikuClass} >
+			<div className= {[this.haikuClass, 'message'].join(' ')} >
 				{this.props.message}	
 			</div>
 		);

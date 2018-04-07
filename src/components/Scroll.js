@@ -25,7 +25,7 @@ class Scroll extends Component {
 			messages: []
 		};
 
-		let app = this.props.db.database().ref('messages').limitToLast(5);
+		let app = this.props.db.database().ref('messages').limitToLast(8);
 		
 		app.on('value', snapshot => {
 			this.getData(snapshot.val());
